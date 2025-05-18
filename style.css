@@ -173,6 +173,7 @@ body.dark-mode nav ul li a:hover {
 
 section {
   padding: 100px 5%;
+  transform: translateZ(0); /* Attempt to force hardware acceleration */
 }
 
 section h2 {
@@ -1919,14 +1920,14 @@ body.dark-mode section li {
   background-color: inherit;
   width: 50%;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(50px) translateZ(0); /* Attempt to force hardware acceleration */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 /* Style when visible */
 .timeline-item.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0); /* Ensure acceleration on show */
 }
 
 /* Place the timeline-item on the left side */
